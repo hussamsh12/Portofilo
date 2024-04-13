@@ -1,0 +1,313 @@
+#contact-me-form-container
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 50vh;
+    border: 3px solid;
+    border-image: linear-gradient(45deg, #d22b63, #1d2b3a) 1;
+    width: 65%;
+    animation: gradient-animation 2s linear infinite;
+}
+
+#input-boxes-container
+{
+    
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+    width: 65%;
+
+}
+
+#input-boxes-container h2
+{
+    position: relative;
+    font-size: 1.5rem;
+    color: #551b7b;
+    margin-right: 100px;
+    background: linear-gradient(90deg, #0f0, #260939, rgb(5, 124, 172), rgb(212, 31, 146), rgb(93, 93, 3));
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.02rem transparent;
+
+}
+
+#submit-button h2::after
+{
+    content: attr(data-text);
+    position: relative;
+    left: 0;
+    color: #222;
+    background: linear-gradient(90deg, #0f0, #1899ff, #f0f, #d00, #ff0);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.02rem transparent;
+    transform: translate(-3px, -3px);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+#submit-container
+{
+    position: relative;
+    flex-direction: column-reverse;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    gap: 80px;
+    width: 35%;
+    margin-right: 10%;
+}
+
+
+#submit-button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;   
+    width: 90%;
+    height: 20%;
+    border: 2px solid #19c544;
+    border-radius: 5px;
+    animation: glow-border 2s infinite alternate;
+    
+    margin-top: 110px;
+
+}
+
+#submit-button button{
+    font-size: 3rem;
+    /* color: #d6bf0e; */
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes glow-border {
+    0% {
+      box-shadow: 0 0 5px #ff0000; /* Set the glow color and initial shadow size */
+    }
+    100% {
+      box-shadow: 0 0 30px #ff0000; /* Increase shadow size for glowing effect */
+    }
+  }
+
+
+#button {
+    text-align: center;
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    background: transparent;
+    font-weight: 500;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+    height: 100%;
+    width: 100%;
+    font-size: 2rem;
+
+}
+
+.spark
+{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: #ac0f70;
+    z-index: 1;
+}
+
+.spark:nth-child(even)
+{
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+@keyframes animateee
+{
+    0%
+    {
+        opacity: 1;
+        transform: translate(0, 0);
+
+    }
+    100%
+    {
+        opacity: 0;
+        transform: translate(var(--x), var(--y));
+    }
+}
+
+#input-boxes-container h1{
+    text-align: start;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#input-box
+{
+    position: relative;
+    width: 70%;
+    margin-right: 20%;
+    margin-bottom: 5%;
+
+}
+
+#input-box input
+{
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a !important;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+
+}
+
+#input-box span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+}
+#input-box input:valid~ span,
+#input-box input:focus ~ span 
+{
+    /* color: #00dfc4; */
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.7rem;
+    padding: 0 10px;
+    background: #00dfc4;
+    color: #1d2b3a;
+    letter-spacing: 0.2rem;
+}
+
+#input-box input:valid,
+#input-box input:focus
+{
+    border: 2px solid #00dfc4;
+
+}
+
+@media screen and (max-width: 800px) {
+    #input-boxes-container h2
+    {
+        font-size: 0.7rem;
+        margin-right: 0;
+    }
+    #button
+    {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+    
+    #input-box input
+    {
+        font-size: 0.7rem;
+        height: 20px;
+    }
+    #input-box span
+    {
+        font-size: 0.6rem;
+    }
+    #input-box input:valid ~ span,
+    #input-box input:focus ~ span
+    {
+        font-size: 0.4rem;
+        letter-spacing: 0.1rem;
+    }
+    img
+    {
+        width: 40px;
+        height: 40px;
+    }
+    #submit-button button
+    {
+        font-size: 1.2rem;
+    }
+  }
+
+
+@keyframes gradient-animation {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+
+.rockett {
+    position: relative;
+    animation: rocket-animation 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.rockett img{
+    visibility: visible;
+}
+.rockett::before
+{
+    content: '';
+    position: absolute;
+    bottom: 32%;
+    left: -100px;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 10px;
+    background: linear-gradient(#064e5e, transparent);
+    filter: blur(8px);
+}
+
+@keyframes rocket-animation 
+{
+    0%
+    {
+        transform: translateX(0px);
+
+    }
+    100%
+    {
+        transform: translateX(900px);
+    }   
+}
+
+
+
+img
+{
+    width: 60px;
+    height: 50px;
+    /* visibility: hidden; */
+}
